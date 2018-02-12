@@ -1,10 +1,10 @@
 package Lesson_01;
 
 public class Hello {
-	public static  int площадь= 10;
+	public static  int РїР»РѕС‰Р°РґСЊ= 10;
 	public static void main(String[] args) {
 		System.out.println("Hello Java World!");
-		System.out.println("площадь = " + площадь);
+		System.out.println("РїР»РѕС‰Р°РґСЊ = " + РїР»РѕС‰Р°РґСЊ);
 
 	}
 
