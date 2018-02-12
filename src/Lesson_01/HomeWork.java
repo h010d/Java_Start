@@ -9,6 +9,7 @@ public class HomeWork {
 		int a = 21;
 		int b = 20;
 		int pow = 2;
+		////////////////////////////////////
 		double average = Math.sqrt(a * b);
 		System.out.println("Average sqrt" + " a *" + " b  = " + average);
 		// ========================================================================= //
