@@ -1,7 +1,7 @@
 package Lesson_01;
 
 public class Bool {
-
+// ====================== //
 	public static void main(String[] args) {
 		int A = 55;
 		boolean a = ( A > 0);
