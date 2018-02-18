@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Fourth {
 		
 		public static void main(String[] args) {
-			// TODO: Найти переменную
+			// TODO: Найти переменнуюgg
 				//int a = 100 / 4 % 4;
 				// 6 задача Java_part_I_05 (if, switch).pdf
 				Scanner in = new Scanner(System.in);
