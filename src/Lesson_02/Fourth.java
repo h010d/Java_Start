@@ -13,6 +13,7 @@ public class Fourth {
 				if((nYear % 4) == 0 && (nYear % 100) != 0 || (nYear % 400) == 0) {
 				System.out.println("Год високосный");
 				}else {System.out.println("Год не високосный");
+				System.out.println("tes");
 				}
 
 }
