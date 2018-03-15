@@ -1,7 +1,5 @@
 package Lesson_05.homework_05;
 
-
-
 import java.util.Scanner;
 
 public class Slide_12_Task_06_homework {
