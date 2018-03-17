@@ -20,9 +20,6 @@ public class Slide_12_Task_02 {
 		if (lastnumb == firstnumb){
 			bl = true;
 		}
-		System.out.println(firstnumb);
-		System.out.println(lastnumb);
-		System.out.println(bl);
 		return bl;
 	}
 
