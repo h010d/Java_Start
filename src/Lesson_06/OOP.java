@@ -3,7 +3,6 @@ package Lesson_06;
 public class OOP {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         Furniture f = new Furniture(30);
         f.color = "Black";
         System.out.println(f.getPrice());
@@ -24,7 +23,6 @@ class Furniture {
     String color;
 
     public Furniture(int pr) {
-        // TODO Auto-generated constructor stub
         price = pr;
         color = "Green";
     }

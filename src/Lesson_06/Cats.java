@@ -35,7 +35,6 @@ public class Cats {
         System.out.println("Name: " + name + " Age: " + getAge()+ " Size: " + size + " " + this.sound );
     }
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         Cats cat = new Cats("Vaska", 5);
         cat.printCats();
     }
