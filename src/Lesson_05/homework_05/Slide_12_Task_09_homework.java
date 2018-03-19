@@ -2,7 +2,7 @@ package Lesson_05.homework_05;
 
 public class Slide_12_Task_09_homework {
     public static void main(String[] args) {
-//        // TODO: 9. Создать метод, проверяющий, может ли массив быть
+//        // 9. Создать метод, проверяющий, может ли массив быть
 //        "сбалансированным", т.е. разделённым на две части в каком-то
 //        месте, таким образом, чтобы сумма элементов одной части
 //        равнялась сумме элементов второй. Т.е.
@@ -20,7 +20,7 @@ public class Slide_12_Task_09_homework {
         System.out.println("");
         boolean search = true;
         while (search) {
-             summleft = 0;
+            summleft = 0;
             summright = 0;
             for (int i = 0; i < arr.length; i++) {
                 if (i < part) {
@@ -37,9 +37,10 @@ public class Slide_12_Task_09_homework {
                 search = false;
                 System.out.println("balance = true;");
                 break;
-            }if(part != arr.length){
+            }
+            if (part != arr.length) {
                 part++;
-            }else{
+            } else {
                 search = false;
                 System.out.println(" balance = false;");
                 break;
