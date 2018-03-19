@@ -11,7 +11,7 @@ public class Shape {
 		Point point0 = new Point(24, 22);
 		Length length = new Length(point0);
 		length.lineLength(length);
-		
+		length.printLength();
 	}
 
 }
@@ -92,13 +92,25 @@ class Point {
 
 	//////////// Length2 IS-A
 	class Length2 extends Point{
-		int x2, y2;
-		public  Length2(int x, int y){
-			super(6,9);
-			this.x2 = x;
-			this.y2 = y;
+	private int x2, y2;
+		public  Length2(int x, int y, int x2, int y2){
+			super(x, y);
+			this.x2 = x2;
+			this.y2 = y2;
 		}
-		
+
+		public Length2 setLength2(int x1, int y1, int x2, int y2){
+			Length2 length2 = new Length2(x1, y1, x2, y2);
+		return  length2;
+		}
+		public Length2 getLength2Coord(){
+
+		}
+		public void printLength2(){
+			super.printPoint();
+			System.out.println("coordX2: " + getCoordX() + ", coordY2: " + getCoordY());
+
+		}
 	}
 
 	//////////// Triangle HAS-A
