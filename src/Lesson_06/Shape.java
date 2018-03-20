@@ -21,7 +21,9 @@ public class Shape {
         Length lengthT1 = new Length(8);
         Length lengthT2 = new Length(7);
         Length lengthT3 = new Length(12);
-        System.out.println("lengthT1 = " + lengthT1.getLineLength() + " lengthT2 = " + lengthT2.getLineLength() + " lengthT3 = " + lengthT3.getLineLength());
+        System.out.println("lengthT1 = " + lengthT1.getLineLength()
+                        + " lengthT2 = " + lengthT2.getLineLength()
+                        + " lengthT3 = " + lengthT3.getLineLength());
         Triangle triangle = new Triangle(lengthT1, lengthT2, lengthT3);
        // triangle.printTriangle();
         System.out.println("Площадь треугольника по 3 стронам = " + triangle.squareTriangle());
