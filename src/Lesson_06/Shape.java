@@ -23,7 +23,7 @@ public class Shape {
         Length lengthT3 = new Length(12);
         System.out.println("lengthT1 = " + lengthT1.getLineLength() + " lengthT2 = " + lengthT2.getLineLength() + " lengthT3 = " + lengthT3.getLineLength());
         Triangle triangle = new Triangle(lengthT1, lengthT2, lengthT3);
-        System.out.println("Площадь треугольника по 3 стронам = " +  triangle.squareTriangle());
+        System.out.println("Площадь треугольника по 3 стронам = " + triangle.squareTriangle());
 
     }
 
@@ -74,8 +74,8 @@ class Point {
 //////////// Length HAS-A
 class Length {
     Point point1;
-   Point point2;
-     double linelength;
+    Point point2;
+    double linelength;
 
     public Length(Point point) {
         this.point1 = point;
@@ -83,10 +83,11 @@ class Length {
     }
 
     public Length() {
-        this.point1 = new Point(2,4);
-        this.point2 = new Point(6,2);
+        this.point1 = new Point(2, 4);
+        this.point2 = new Point(6, 2);
     }
-    public Length(double linelength){
+
+    public Length(double linelength) {
         this.linelength = linelength;
     }
 
@@ -117,10 +118,12 @@ class Length {
     public void setLineLength(double a) {
         this.linelength = a;
     }
-    public double getLineLength(){
+
+    public double getLineLength() {
         return this.linelength;
     }
-    public void printLineLength(){
+
+    public void printLineLength() {
         System.out.println("linelength = " + linelength);
     }
 }
@@ -206,16 +209,19 @@ class Triangle {
     public void printTriangle() {
 
         System.out.println("length1 = ");
-       length1.printLength();
+        length1.printLength();
         System.out.println("length2 = ");
         //length2.printLength();
         System.out.println("length3 = ");
         //length3.printLength();
     }
-    public  double squareTriangle(){
+
+    public double squareTriangle() {
         //Формула Герона
         double sq = (length1.linelength + length2.linelength + length3.linelength) / 2.0; //полупериметр
-        return Math.sqrt(sq * (sq - length1.linelength) * (sq - length2.linelength) * (sq - length3.linelength));
+        return Math.sqrt(sq * (sq - length1.linelength)
+                            * (sq - length2.linelength)
+                            * (sq - length3.linelength));
     }
 }
 
