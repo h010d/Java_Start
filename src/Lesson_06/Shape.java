@@ -3,26 +3,27 @@ package Lesson_06;
 public class Shape {
 
     public static void main(String[] args) {
-        Point point1 = new Point(10, 11);
-        point1.printPoint();
-        Point point0 = new Point(24, 22);
-        Length length = new Length(point0);
-        length.lineLength(length);
-        length.printLength();
-        Length2 length2 = new Length2(2, 3, 5, 6);
-        System.out.println(length2.getCoordX());
-        length2.printLength2Coord();
-        System.out.println(length2.getLength2CoordX2());
-        length2.printLength2AllCoord();
-        length2.setLength2(3, 5, 9, 8);
-        length2.printLength2AllCoord();
-        length2.lineLength2(length2);
-        System.out.println(length2.getClass().getName());
+//        Point point1 = new Point(10, 11);
+//        point1.printPoint();
+//        Point point0 = new Point(24, 22);
+//        Length length = new Length(point0);
+//        length.lineLength(length);
+//        length.printLength();
+//        Length2 length2 = new Length2(2, 3, 5, 6);
+//        System.out.println(length2.getCoordX());
+//        length2.printLength2Coord();
+//        System.out.println(length2.getLength2CoordX2());
+//        length2.printLength2AllCoord();
+//        length2.setLength2(3, 5, 9, 8);
+//        length2.printLength2AllCoord();
+//        length2.lineLength2(length2);
+//        System.out.println(length2.getClass().getName());
         Length lengthT1 = new Length(8);
         Length lengthT2 = new Length(7);
         Length lengthT3 = new Length(12);
         System.out.println("lengthT1 = " + lengthT1.getLineLength() + " lengthT2 = " + lengthT2.getLineLength() + " lengthT3 = " + lengthT3.getLineLength());
         Triangle triangle = new Triangle(lengthT1, lengthT2, lengthT3);
+       // triangle.printTriangle();
         System.out.println("Площадь треугольника по 3 стронам = " + triangle.squareTriangle());
 
     }
