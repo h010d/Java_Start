@@ -40,7 +40,8 @@ public class Bouquet {
 		}
 
 	}
-	public void pintFlofArr() {
+
+	public void pintFlofArr() {// Вывод массива на экран
 		for(int i = 0; i < fl.length; i++) {
 			if(fl[i] instanceof Living) {
 			System.out.print(" fl[" + i + "]: " + ((Living)fl[i]).freshness );
