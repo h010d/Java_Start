@@ -27,4 +27,7 @@ public class Living extends Flower {
 
 	}
 
+	public byte getFreshness() {
+		return freshness;
+	}
 }

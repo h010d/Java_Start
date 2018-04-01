@@ -22,6 +22,9 @@ public class Chamomile extends Living {
 		}
 		
 	}
+	public int getNumberOfPetals(){
+		return this.numberofpetals;
+	}
 	public void setNumberOfPetalsDefault() {
 		this.numberofpetals = (int)((((Math.random() * 100) % 12) + 5));
 	}
