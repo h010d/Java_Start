@@ -18,7 +18,7 @@ public class Florist {
 		byte test = 10;
 		int select = 0;
 		int newCost = 0;
-		Flower flower[] = new Flower[15];
+		Flower flower[] = new Flower[18];
 		for(int i = 0; i < flower.length; i++) {
 		select = ((int)(Math.random() * 100));
 		if((select > 5) && (select <= 40)) {
@@ -39,8 +39,8 @@ public class Florist {
 	bouquet.sortFreshness();
 	System.out.println("\nnew arr: ");
 	bouquet.pintFlofArr();
-	bouquet.sortChamomile();
-	bouquet.sortRoseName();
+//	bouquet.sortChamomile();
+	bouquet.sortRoseArr();
         System.out.println("\nnew arr sortRoseName: ");
         bouquet.pintFlofArr();
 	}

@@ -69,29 +69,34 @@ public class Bouquet {
 
     }
 
-    public void sortRoseName() {
-        Flower flower = new Flower();
-        int endarr = fl.length - 1;
-        for (int i = 0; i < endarr; i++) {
-            for (int j = 0; j < endarr; j++) {
-                while ((fl[j] instanceof Rose) && (endarr > j)) {
-                    if(j == 0){
-                        j++;
-                        break;
-                    }
-                    flower = fl[j];
-                    fl[j] = fl[endarr];
-                    fl[endarr] = flower;
-                    j++;
-                    i++;
-                    endarr--;
+    public int sortRoseArr() {
+        Flower flower;
+        int countrose = 0;
+        for (int j = 1; j < fl.length; j++) {
 
+            if (fl[j] instanceof Rose) {
+                flower = fl[j];
+                while (fl[countrose] instanceof Rose) {
+                    countrose++;
                 }
+                fl[j] = fl[countrose];
+                fl[countrose++] = flower;
+
+            }
+        }
+        return countrose;
+    }
+
+    public void sortRoseName() {
+        Flower flower;
+        int end = sortRoseArr();
+        for (int i = 0; i < end; i++) {
+            for (int j = 1; j < end; j++) {
                 if ((fl[j] instanceof Rose) && (fl[j + 1] instanceof Rose)) {
-                    if (((Rose) fl[j]).namesort.compareTo(((Rose) fl[j + 1]).namesort) <= 0) {
+                    if (((Rose) fl[j]).namesort.compareTo(((Rose) fl[j + 1]).namesort) >= 0) {
                         break;
                     }
-                    if (((Rose) fl[j]).namesort.compareTo(((Rose) fl[j + 1]).namesort) > 0) {
+                    if (((Rose) fl[j]).namesort.compareTo(((Rose) fl[j + 1]).namesort) < 0) {
                         flower = fl[j];
                         fl[j] = fl[j + 1];
                         fl[j + 1] = flower;
@@ -100,6 +105,7 @@ public class Bouquet {
                 }
             }
         }
+
     }
 
     public void pintFlofArr() {// Вывод всего массива на экран
