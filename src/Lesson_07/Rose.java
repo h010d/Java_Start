@@ -28,7 +28,7 @@ public class Rose extends Living {
 	}
 
 	public void setNameSortDefault() {
-		String arr[] = { "Голландия", "Белая", "Красная", "Бархатная", "Розовая" };
+		String arr[] = { "Голландия", "Белая", "Красная", "Бархатная", "Розовая", "Филатели","Баркароле", "Дабл дилайт", "Дольчевита", "Ланком"};
 		this.namesort = arr[((int) (Math.random() * arr.length))];
 	}
 
