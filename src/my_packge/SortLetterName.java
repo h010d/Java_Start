@@ -2,13 +2,13 @@ package my_packge;
 
 public class SortLetterName {
    public static String arr[] = {"Мама","Сестра","Брат","Отец","Теща","брат","сестра","МАМА","ПАПА","Бабушка","дедушка","Отец","Девочка","БРАТИшка","dgdfg","eetrt","etsrgt","gjghj"};
-    public static String minarr[] = {"Bd","Aj","Dj","Ek","Ck"};
+    public static String minarr[] = {"Bdxdfvfdxvgf","Ajfdf","Djdfddfdfdfdfdf","Ekwdwdthh","Ckyjujkuk"};
 
     public static void main(String[] args) {
-pntArr(arr);
+pntArr(minarr);
         System.out.println("new arr\n");
-        sortArr(arr);
-pntArr(arr);
+        sortArr(minarr);
+pntArr(minarr);
     }
     public static void sortArr(String [] arr){
         String tmp;
