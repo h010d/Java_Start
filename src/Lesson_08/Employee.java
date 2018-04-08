@@ -46,4 +46,21 @@ public abstract class Employee {
 			}
 		}
 	}
+	public static void printArr(Employee employee[]){
+		for (int i = 0; i < employee.length; i++) {
+			System.out.printf("%2d", i + 1);
+			System.out.print(" | ");
+			System.out.printf("%10s", employee[i].name);
+			System.out.print(" | ");
+			System.out.printf("%10s",employee[i].lastName);
+			System.out.print(" | ");
+			System.out.printf("%10.2f", employee[i].salary);
+			System.out.print(" | ");
+			System.out.println("");
+			for (int j = 0; j < 43; j++) {
+				System.out.print("-");
+			}
+			System.out.println("");
+		}
+	}
 }

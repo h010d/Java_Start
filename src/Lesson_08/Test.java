@@ -6,7 +6,7 @@ public class Test {
 		Employee employee[] = new Employee[25];
 		double rand = 0;
 		for (int i = 0; i < employee.length; i++) {
-			rand = (((double) (Math.random() * 10)));
+			rand = (Math.random() * 10);
 			if (rand > 5) {
 				employee[i] = new WageRate();
 				employee[i].payrollCalculation();
@@ -41,6 +41,9 @@ public class Test {
 				System.out.println("\nПоследние 3 сотрудника\n");
 			}
 		}
+		System.out.println("\n New output:\n");
+		Employee.printArr(employee);
+
 	}
 
 }
