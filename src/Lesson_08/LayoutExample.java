@@ -18,7 +18,7 @@ public class LayoutExample {
 		f.setSize(400, 250);
 		f.add(b1);
 		f.add(b2);
-//		f.setFocusable(true);
+		f.setFocusable(true);
 		f.pack(); // Попробуйте закомментировать эту сроку
 		f.setVisible(true);
 	}
