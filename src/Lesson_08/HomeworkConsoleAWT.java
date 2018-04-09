@@ -1,6 +1,7 @@
 package Lesson_08;
 
 import java.awt.*;
+import java.util.Scanner;
 
 public class HomeworkConsoleAWT {
     private Frame f;
@@ -21,21 +22,20 @@ public class HomeworkConsoleAWT {
     public HomeworkConsoleAWT() {
         f = new Frame("Hello I'm There!");
         col = new int[3];
-        column = 5;
         width = 30;
         height = 30;
     }
 
     public void launchFrame(int amount) {
-        row = amount / column;
+        sqrtSize(amount);
         heightField = row * height + fixedy;
-        widthField = column * width + fixedx;
+        widthField = column* width + fixedx;
 
         f.setSize(widthField, heightField);
         f.setBackground(Color.blue);
         f.setLayout(null); // Попробуйте закомментировать эту сроку
         for (int i = 0; i < row; i++) {
-            for (int k = 0; k < column; k++) {
+            for (int k = 0; k < column && amount > 0; k++, amount--) {
 
                 for (int j = 0; j < col.length; j++) {
                     col[j] = ((int) (Math.random() * 255));
@@ -52,11 +52,28 @@ public class HomeworkConsoleAWT {
             coordx = fixedx / 2;
             coordy += height;
         }
+        f.dispose();
         f.setVisible(true);
+    }
+    public void  sqrtSize(int amount){
+        int tmpnumb = (int)Math.sqrt(amount);
+        if(Math.pow(tmpnumb, 2) < amount){
+            column = tmpnumb;
+             row = tmpnumb + 1;
+        }else{
+            column = tmpnumb;
+            row = tmpnumb;
+        }
     }
 
     public static void main(String[] args) {
+        int amount;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Сколько квадратов нужно вывести на экране? ");
+        do {
+           amount = scanner.nextInt();
+        }while( (amount <= 5) || (amount > 999));
         HomeworkConsoleAWT guiWindow = new HomeworkConsoleAWT();
-        guiWindow.launchFrame(125);
+        guiWindow.launchFrame(amount );
     }
 }
