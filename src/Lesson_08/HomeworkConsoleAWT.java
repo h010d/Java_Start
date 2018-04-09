@@ -27,7 +27,7 @@ public class HomeworkConsoleAWT {
     }
 
     public void launchFrame(int amount) {
-        sqrtSize(amount);
+    	sqrtSize(amount);
         heightField = row * height + fixedy;
         widthField = column* width + fixedx;
 
