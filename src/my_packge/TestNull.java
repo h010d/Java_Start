@@ -7,6 +7,9 @@ public class TestNull {
     static String str;
     static double dbl;
     static double result;
+   private static boolean boper = true; //разрешение операции
+    static boolean bleft = false;
+    static boolean bright = false;
 
 
     public static void main(String[] args) {
@@ -18,5 +21,13 @@ str = "";
         result = 20;
         result -= dbl;
         System.out.println("result " + result);
+        if(!boper && !bleft && !bright){
+            System.out.println("3 " + true);
+        }
+        if(boper){
+            System.out.println(" boper " + boper);
+        }else {
+            System.out.println(" boper " + boper);
+        }
     }
 }
