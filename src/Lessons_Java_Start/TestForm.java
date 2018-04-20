@@ -26,21 +26,26 @@ public class TestForm {
 JFrame jFrame = getFrame();
 
 jFrame.add(new MyComponent());
+        UIManager.LookAndFeelInfo[] infos = UIManager.getInstalledLookAndFeels();
+        for(UIManager.LookAndFeelInfo info : infos) {
+            System.out.println(info.getName());
+            System.out.println(info.getClassName());
+        }
 
     }
 
     static class MyComponent extends JComponent {
-        private BufferedImage image2;
+        private BufferedImage image3;
         @Override
         protected void paintComponent(Graphics g) {
             Font font = new Font("Rockwell Extra Bold", Font.BOLD, 20);
             Graphics2D g2 = (Graphics2D) g;
             g2.setFont(font);
             g2.drawString("Hello world", 50, 50);
-            Point2D p1 = new Point2D.Double(45, 50);
-            Point2D p2 = new Point2D.Double(145, 75);
-            Point2D p3 = new Point2D.Double(200, 125);
-            Point2D p4 = new Point2D.Double(278, 178);
+            Point2D p1 = new Point2D.Double(275, 20);
+            Point2D p2 = new Point2D.Double(145, 150);
+            Point2D p3 = new Point2D.Double(200, 175);
+            Point2D p4 = new Point2D.Double(278, 258);
 
             Line2D l2 = new Line2D.Double(70, 70, 190, 190);
             Line2D l3 = new Line2D.Double(p1, p2);
@@ -58,6 +63,12 @@ jFrame.add(new MyComponent());
 //            g2.fill(el);
             Rectangle2D r2 = new Rectangle2D.Double(70, 70, 190, 190);
             g2.draw(r2);
+            Rectangle2D r3 = new Rectangle2D.Double();
+            r3.setFrameFromDiagonal(p1, p2);
+            g2.draw(r3);
+            Ellipse2D el2 = new Ellipse2D.Double();
+            el2.setFrameFromDiagonal(p1, p2);
+            g2.draw(el2);
             try {
                 URL url = new URL("https://docs.oracle.com/javase/10/dcommon/img/1-java.png");
                 Image image = new ImageIcon(url).getImage();
@@ -72,9 +83,14 @@ jFrame.add(new MyComponent());
 
 
                 Image image2 = new ImageIcon("D:\\UniverInfopulse\\JAVA\\eclipse-workspace\\Java_Start\\src\\images\\java.png").getImage();
-//                image2 = ImageIO.read(new File("images/java.png")); //относительный путь не сработал
+//            try {
+////                image3 = ImageIO.read(new File("images/buildJava.jpg")); //относительный путь не сработал
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
-            g2.drawImage(image2, 120, 50, null);
+            g2.drawImage(image2, 220, 275, null);
+            g2.drawImage(image3, 10, 15, null);
 
         }
     }

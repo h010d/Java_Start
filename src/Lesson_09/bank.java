@@ -1,26 +1,19 @@
 package Lesson_09;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTree;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import java.awt.Color;
-import java.awt.GridBagLayout;
 import java.awt.Font;
-import javax.swing.JTextArea;
 import javax.swing.JLabel;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.SwingConstants;
-import javax.swing.UIManager;
 import java.awt.SystemColor;
+
 
 public class bank extends JFrame {
 	double balance = 100;

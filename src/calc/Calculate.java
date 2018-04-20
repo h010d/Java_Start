@@ -4,10 +4,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class Calculate extends JFrame {
-    double result = 0;
+    boolean bleft;
+    boolean bright;
+    double result;
     private byte choice;
-   private double number;
+    private double numberTmp;
+    //private double numberSecond;
     private static char ch = '.';
     private JTextField textField;
     private JPanel panelRoot;
@@ -29,9 +33,12 @@ public class Calculate extends JFrame {
     private JButton buttonFuncDot;
     private JButton a0Button;
     private JPanel fieldPanel;
+    private JLabel resultLabel;
+    private JButton cleatButton;
 
     private Calculate() {
-
+        bleft = false;
+        bright = false;
         a1Button.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -151,8 +158,8 @@ public class Calculate extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String s = textField.getText();
-            int check = s.indexOf(ch);
-                if(check == -1){
+                int check = s.indexOf(ch);
+                if (check == -1) {
                     textField.setText(textField.getText() + ".");
                 }
 
@@ -166,9 +173,20 @@ public class Calculate extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                number = Double.parseDouble(textField.getText());
+                if (!(textField.getText().isEmpty())) {
+                    numberTmp = Double.parseDouble(textField.getText());
+                    bleft = true;
+                }
                 choice = 1;
-                textField.setText(result +  " / ");
+                if (bleft && bright) {
+                    FuncOperations(choice);
+                }
+                if (bright == false) {
+                    FuncTrueOpration();
+                } else {
+                    System.out.println("bleft: " + bleft + " bright: " + bright);
+                    System.out.println("block /");
+                }
 //                textField.setText(textField.getText() + "/");
             }
         });
@@ -180,10 +198,21 @@ public class Calculate extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (!(textField.getText().isEmpty())) {
+                    numberTmp = Double.parseDouble(textField.getText());
+                    bleft = true;
 
-                number = Double.parseDouble(textField.getText());
-                choice =2;
-                textField.setText(result +  " * ");
+                }
+                choice = 2;
+                if (bleft && bright) {
+                    FuncOperations(choice);
+                }
+                if (bright == false) {
+                    FuncTrueOpration();
+                } else {
+                    System.out.println("bleft: " + bleft + " bright: " + bright);
+                    System.out.println("block *");
+                }
 //                textField.setText(textField.getText() + "*");
             }
         });
@@ -195,9 +224,21 @@ public class Calculate extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                number = Double.parseDouble(textField.getText());
+                if (!(textField.getText().isEmpty())) {
+                    numberTmp = Double.parseDouble(textField.getText());
+                    bleft = true;
+                }
                 choice = 3;
-                textField.setText(result + " - ");
+                if (bleft && bright) {
+                    FuncOperations(choice);
+                }
+                if (bright == false) {
+                    FuncTrueOpration();
+                } else {
+                    System.out.println("bleft: " + bleft + " bright: " + bright);
+                    System.out.println("block -");
+                }
+
 //                textField.setText(textField.getText() + "-");
             }
         });
@@ -209,9 +250,24 @@ public class Calculate extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                number = Double.parseDouble(textField.getText());
+                if (!(textField.getText().isEmpty())) {
+                    numberTmp = Double.parseDouble(textField.getText());
+                    bleft = true;
+                }
                 choice = 4;
-                textField.setText( result + " + ");
+                if (bleft && bright) {
+                    FuncOperations(choice);
+                }
+                if (bright == false) {
+                    FuncTrueOpration();
+                } else {
+                    System.out.println("bleft: " + bleft + " bright: " + bright);
+                    System.out.println("block +");
+                }
+
+
+//                resultLabel.setText(Double.toString(result));
+//                textField.setText("");
 //                textField.setText(textField.getText() + "+");
             }
         });
@@ -223,33 +279,92 @@ public class Calculate extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-FuncOperations();
-
+                if (!(textField.getText().isEmpty())) {
+                    numberTmp = Double.parseDouble(textField.getText());
+                    bleft = true;
+                }
+                if (bright == false) {
+                    FuncTrueOpration();
+                }
+                if (bleft && bright) {
+                    FuncOperations(choice);
+                } else {
+                    System.out.println("bleft: " + bleft + " bright: " + bright);
+                }
+                System.out.println("I worked: 2");
 //     textField.setText(textField.getText() + "=");
+            }
+        });
+        cleatButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textField.setText("");
+                resultLabel.setText("");
+                result = 0;
+                numberTmp = 0;
+                bright = false;
+                bleft = false;
+                System.out.println("bleft: " + bleft + " bright: " + bright);
+                System.out.println("block Clear");
             }
         });
     }
 
-    public void FuncOperations() {
+    public void FuncTrueOpration() {
+        result = numberTmp;
+        resultLabel.setText(Double.toString(result));
+        textField.setText("");
+        bright = true;
+        bleft = false;
+        System.out.println("bleft: " + bleft + " bright: " + bright);
+        System.out.println("block FuncTrueOpration()");
+
+    }
+
+    public void FuncOperations(int choice) {
 
         switch (choice) {
+
             case 1://Division
-                result = number / Double.parseDouble(textField.getText());
-                textField.setText(Double.toString(result));
+                System.out.println("choice: " + choice);
+                result = result / numberTmp;
+                resultLabel.setText(Double.toString(result));
+                textField.setText("");
+                bleft = false;
+                break;
             case 2: //Multiplication
-                result = number * Double.parseDouble(textField.getText());
-                textField.setText(Double.toString(result));
+                result = result * numberTmp;
+                resultLabel.setText(Double.toString(result));
+                textField.setText("");
+                bleft = false;
+                break;
             case 3: //Substraction
-                result = number - Double.parseDouble(textField.getText());
-                textField.setText(Double.toString(result));
-
+                result = result - numberTmp;
+                resultLabel.setText(Double.toString(result));
+                textField.setText("");
+                bleft = false;
+                break;
             case 4: //Addidion
-                result = number + Double.parseDouble(textField.getText());
-                textField.setText(Double.toString(result));
-
-
+                System.out.println("choice: " + choice);
+                result += numberTmp;
+                resultLabel.setText(Double.toString(result));
+                textField.setText("");
+                System.out.println("I worked: 1");
+                bleft = false;
+                break;
+            default:
+                System.out.println("Неверное значение выбора операции");
+                break;
         }
+        System.out.println("bleft: " + bleft + " bright: " + bright);
+        System.out.println("block FuncOperations(int choice )");
     }
+
 
     public static void main(String[] args) {
         Calculate calculate = new Calculate();
