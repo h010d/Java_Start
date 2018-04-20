@@ -6,9 +6,10 @@ import java.awt.event.ActionListener;
 
 
 public class Calculate extends JFrame {
-    boolean bleft;
-    boolean bright;
-    double result;
+    private boolean boper; //разрешение операции
+    private boolean bleft;
+    private boolean bright;
+    private double result;
     private byte choice;
     private double numberTmp;
     //private double numberSecond;
@@ -20,7 +21,7 @@ public class Calculate extends JFrame {
     private JButton a8Button;
     private JButton a9Button;
     private JButton buttonFuncDivide;
-    private JButton buttonFuncStar;
+    private JButton buttonFuncMulti;
     private JButton buttonFuncMinus;
     private JButton a6Button;
     private JButton a5Button;
@@ -30,7 +31,7 @@ public class Calculate extends JFrame {
     private JButton a3Button;
     private JButton buttonFuncPlus;
     private JButton buttonFuncEqual;
-    private JButton buttonFuncDot;
+    private JButton buttonFuncPoint;
     private JButton a0Button;
     private JPanel fieldPanel;
     private JLabel resultLabel;
@@ -39,6 +40,7 @@ public class Calculate extends JFrame {
     private Calculate() {
         bleft = false;
         bright = false;
+        boper = false;
         a1Button.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -149,7 +151,7 @@ public class Calculate extends JFrame {
                 textField.setText(textField.getText() + "0");
             }
         });
-        buttonFuncDot.addActionListener(new ActionListener() {
+        buttonFuncPoint.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
              *
@@ -177,20 +179,20 @@ public class Calculate extends JFrame {
                     numberTmp = Double.parseDouble(textField.getText());
                     bleft = true;
                 }
-                choice = 1;
-                if (bleft && bright) {
+                if(!boper){
+                    choice = 1;
+                    boper = true;
+                }
+                if (bleft && bright && boper) {
                     FuncOperations(choice);
                 }
-                if (bright == false) {
+                if (!bright) {
                     FuncTrueOpration();
-                } else {
-                    System.out.println("bleft: " + bleft + " bright: " + bright);
-                    System.out.println("block /");
                 }
-//                textField.setText(textField.getText() + "/");
+
             }
         });
-        buttonFuncStar.addActionListener(new ActionListener() {
+        buttonFuncMulti.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
              *
@@ -203,17 +205,16 @@ public class Calculate extends JFrame {
                     bleft = true;
 
                 }
-                choice = 2;
-                if (bleft && bright) {
+                if(!boper){
+                    choice = 2;
+                    boper = true;
+                }
+                if (bleft && bright && boper) {
                     FuncOperations(choice);
                 }
-                if (bright == false) {
+                if (!bright) {
                     FuncTrueOpration();
-                } else {
-                    System.out.println("bleft: " + bleft + " bright: " + bright);
-                    System.out.println("block *");
                 }
-//                textField.setText(textField.getText() + "*");
             }
         });
         buttonFuncMinus.addActionListener(new ActionListener() {
@@ -228,18 +229,18 @@ public class Calculate extends JFrame {
                     numberTmp = Double.parseDouble(textField.getText());
                     bleft = true;
                 }
-                choice = 3;
-                if (bleft && bright) {
+                if(boper){
+
+                }else{
+                    choice = 3;
+                    boper = true;
+                }
+                if (bleft && bright && boper) {
                     FuncOperations(choice);
                 }
-                if (bright == false) {
+                if (!bright) {
                     FuncTrueOpration();
-                } else {
-                    System.out.println("bleft: " + bleft + " bright: " + bright);
-                    System.out.println("block -");
                 }
-
-//                textField.setText(textField.getText() + "-");
             }
         });
         buttonFuncPlus.addActionListener(new ActionListener() {
@@ -254,21 +255,18 @@ public class Calculate extends JFrame {
                     numberTmp = Double.parseDouble(textField.getText());
                     bleft = true;
                 }
-                choice = 4;
-                if (bleft && bright) {
+                if(boper){
+
+                }else{
+                    choice = 4;
+                    boper = true;
+                }
+                if (bleft && bright && boper) {
                     FuncOperations(choice);
                 }
-                if (bright == false) {
+                if (!bright) {
                     FuncTrueOpration();
-                } else {
-                    System.out.println("bleft: " + bleft + " bright: " + bright);
-                    System.out.println("block +");
                 }
-
-
-//                resultLabel.setText(Double.toString(result));
-//                textField.setText("");
-//                textField.setText(textField.getText() + "+");
             }
         });
         buttonFuncEqual.addActionListener(new ActionListener() {
@@ -283,16 +281,12 @@ public class Calculate extends JFrame {
                     numberTmp = Double.parseDouble(textField.getText());
                     bleft = true;
                 }
-                if (bright == false) {
+                if (!bright) {
                     FuncTrueOpration();
                 }
-                if (bleft && bright) {
+                if (bleft && bright && boper) {
                     FuncOperations(choice);
-                } else {
-                    System.out.println("bleft: " + bleft + " bright: " + bright);
                 }
-                System.out.println("I worked: 2");
-//     textField.setText(textField.getText() + "=");
             }
         });
         cleatButton.addActionListener(new ActionListener() {
@@ -309,8 +303,6 @@ public class Calculate extends JFrame {
                 numberTmp = 0;
                 bright = false;
                 bleft = false;
-                System.out.println("bleft: " + bleft + " bright: " + bright);
-                System.out.println("block Clear");
             }
         });
     }
@@ -321,9 +313,6 @@ public class Calculate extends JFrame {
         textField.setText("");
         bright = true;
         bleft = false;
-        System.out.println("bleft: " + bleft + " bright: " + bright);
-        System.out.println("block FuncTrueOpration()");
-
     }
 
     public void FuncOperations(int choice) {
@@ -331,38 +320,37 @@ public class Calculate extends JFrame {
         switch (choice) {
 
             case 1://Division
-                System.out.println("choice: " + choice);
-                result = result / numberTmp;
+                result /= numberTmp;
                 resultLabel.setText(Double.toString(result));
                 textField.setText("");
                 bleft = false;
+                boper = false;
                 break;
             case 2: //Multiplication
-                result = result * numberTmp;
+                result *= numberTmp;
                 resultLabel.setText(Double.toString(result));
                 textField.setText("");
                 bleft = false;
+                boper = false;
                 break;
             case 3: //Substraction
-                result = result - numberTmp;
+                result -= numberTmp;
                 resultLabel.setText(Double.toString(result));
                 textField.setText("");
                 bleft = false;
+                boper = false;
                 break;
             case 4: //Addidion
-                System.out.println("choice: " + choice);
                 result += numberTmp;
                 resultLabel.setText(Double.toString(result));
                 textField.setText("");
-                System.out.println("I worked: 1");
                 bleft = false;
+                boper = false;
                 break;
             default:
                 System.out.println("Неверное значение выбора операции");
                 break;
         }
-        System.out.println("bleft: " + bleft + " bright: " + bright);
-        System.out.println("block FuncOperations(int choice )");
     }
 
 
