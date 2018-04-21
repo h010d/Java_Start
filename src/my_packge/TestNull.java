@@ -14,7 +14,7 @@ public class TestNull {
 
     public static void main(String[] args) {
 
-str = "";
+str = "-345465";
         System.out.println("str.length() : " + str.length());
         System.out.println("str.isEmpty();" + str.isEmpty());
         dbl = 40;
@@ -29,5 +29,9 @@ str = "";
         }else {
             System.out.println(" boper " + boper);
         }
+        dbl = Double.parseDouble(str);
+        System.out.println(" dbl " + dbl);
+        dbl *= (-1);
+        System.out.println(" dbl " + dbl);
     }
 }

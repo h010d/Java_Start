@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 
 public class Calculate extends JFrame {
+    private boolean bsign;
     private boolean boper; //разрешение операции
     private boolean bleft;
     private boolean bright;
@@ -36,11 +37,13 @@ public class Calculate extends JFrame {
     private JPanel fieldPanel;
     private JLabel resultLabel;
     private JButton cleatButton;
+    private JButton buttonSign;
 
     private Calculate() {
         bleft = false;
         bright = false;
         boper = false;
+        bsign = false;
         a1Button.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -229,9 +232,7 @@ public class Calculate extends JFrame {
                     numberTmp = Double.parseDouble(textField.getText());
                     bleft = true;
                 }
-                if(boper){
-
-                }else{
+                if(!boper){
                     choice = 3;
                     boper = true;
                 }
@@ -255,9 +256,7 @@ public class Calculate extends JFrame {
                     numberTmp = Double.parseDouble(textField.getText());
                     bleft = true;
                 }
-                if(boper){
-
-                }else{
+                if(!boper){
                     choice = 4;
                     boper = true;
                 }
@@ -284,7 +283,7 @@ public class Calculate extends JFrame {
                 if (!bright) {
                     FuncTrueOpration();
                 }
-                if (bleft && bright && boper) {
+                if (bleft && bright) {
                     FuncOperations(choice);
                 }
             }
@@ -305,9 +304,32 @@ public class Calculate extends JFrame {
                 bleft = false;
             }
         });
+        buttonSign.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(bsign){
+                    numberTmp *= (-1);
+                    textField.setText(Double.toString(numberTmp));
+                    System.out.println("1 bsign: " + bsign + " numberTmp: " + numberTmp);
+                    bsign = false;
+                }
+                if(!bsign){
+                textField.setText( "-" + textField.getText());
+                numberTmp *= (-1);
+                    System.out.println("2 bsign: " + bsign + " numberTmp: " + numberTmp);
+                    bsign = true;
+                }
+
+            }
+        });
     }
 
-    public void FuncTrueOpration() {
+    private void FuncTrueOpration() {
         result = numberTmp;
         resultLabel.setText(Double.toString(result));
         textField.setText("");
@@ -315,7 +337,7 @@ public class Calculate extends JFrame {
         bleft = false;
     }
 
-    public void FuncOperations(int choice) {
+    private void FuncOperations(int choice) {
 
         switch (choice) {
 
@@ -363,4 +385,7 @@ public class Calculate extends JFrame {
         calculate.setVisible(true);
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
