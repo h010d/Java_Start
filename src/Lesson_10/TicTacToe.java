@@ -273,59 +273,59 @@ public void PrintMyArr() {
 public  void CheckWin() {
 	PrintMyArr();
 	if(btn1 && btn2 && btn3) {
-		if(((JButton)btnNewButton1).getText().equals(str0)
-		 && ((JButton)btnNewButton2).getText().equals(str0)
-		 && ((JButton)btnNewButton3).getText().equals(str0)) {
+		if(btnNewButton1.getText().equals(str0)
+		 && btnNewButton2.getText().equals(str0)
+		 && btnNewButton3.getText().equals(str0)){
 			setTitle("Win 0");
 		}
 		
 	}
 	if(btn1 && btn2 && btn3) {
-		if(((JButton)btnNewButton1).getText().equals(strX)
-		&& ((JButton)btnNewButton2).getText().equals(strX)
-		 && ((JButton)btnNewButton3).getText().equals(strX)) {
+		if(btnNewButton1.getText().equals(strX)
+		&&   btnNewButton2.getText().equals(strX)
+		 && btnNewButton3.getText().equals(strX)) {
 			setTitle("Win X");
 		}
 		
 	}
 	if(btn4 && btn5 && btn6) {
-		if(((JButton)btnNewButton4).getText().equals(str0)
-		&& ((JButton)btnNewButton5).getText().equals(str0)
-		&& ((JButton)btnNewButton6).getText().equals(str0)) {
+		if(btnNewButton4.getText().equals(str0)
+		&& btnNewButton5.getText().equals(str0)
+		&& btnNewButton6.getText().equals(str0)) {
 			setTitle("Win 0");
 		}
 		
 	
 	}
 	if(btn4 && btn5 && btn6) {
-		if(((JButton)btnNewButton4).getText().equals(strX)
-		&& ((JButton)btnNewButton5).getText().equals(strX)
-		&& ((JButton)btnNewButton6).getText().equals(strX)) {
+		if(btnNewButton4.getText().equals(strX)
+		&& btnNewButton5.getText().equals(strX)
+		&& btnNewButton6.getText().equals(strX)) {
 			setTitle("Win X");
 		}
 		
 	}
 	if(btn7 && btn8 && btn9) {
-		if(((JButton)btnNewButton7).getText().equals(str0)
-		 && ((JButton)btnNewButton8).getText().equals(str0)
-		 && ((JButton)btnNewButton9).getText().equals(str0)) {
+		if(btnNewButton7.getText().equals(str0)
+		 && btnNewButton8.getText().equals(str0)
+		 && btnNewButton9.getText().equals(str0)) {
 			setTitle("Win 0");
 		}
 		
 	}
 	if(btn7 && btn8 && btn9) {
 		if(
-		((JButton)btnNewButton7).getText().equals(strX)
-		&& ((JButton)btnNewButton8).getText().equals(strX)
-		&& ((JButton)btnNewButton9).getText().equals(strX)) {
+		btnNewButton7.getText().equals(strX)
+		&& btnNewButton8.getText().equals(strX)
+		&& btnNewButton9.getText().equals(strX)) {
 			setTitle("Win X");
 		}
 		
 	}
 	if(btn1 && btn4 && btn7) {
-		if(((JButton)btnNewButton1).getText().equals(str0)
-		&& ((JButton)btnNewButton4).getText().equals(str0)
-		&& ((JButton)btnNewButton7).getText().equals(str0)) {
+		if(btnNewButton1.getText().equals(str0)
+		&& btnNewButton4.getText().equals(str0)
+		&& btnNewButton7.getText().equals(str0)) {
 			setTitle("Win 0");
 		}
 		
@@ -333,80 +333,80 @@ public  void CheckWin() {
 	}
 	if(btn1 && btn4 && btn7) {
 		if(btnNewButton1.getText().equals(strX)
-		&& (btnNewButton4).getText().equals(strX)
-		&& (btnNewButton7).getText().equals(strX)) {
+		&& btnNewButton4.getText().equals(strX)
+		&& btnNewButton7.getText().equals(strX)) {
 			setTitle("Win X");
 		}
 		
 		
 	}
 	if(btn2 && btn5 && btn8) {
-		if(((JButton)btnNewButton2).getText().equals(str0)
-		&& ((JButton)btnNewButton5).getText().equals(str0)
-		&& ((JButton)btnNewButton8).getText().equals(str0)) {
+		if(btnNewButton2.getText().equals(str0)
+		&& btnNewButton5.getText().equals(str0)
+		&& btnNewButton8.getText().equals(str0)) {
 			setTitle("Win 0");
 		}
 		
 		
 	}
 	if(btn2 && btn5 && btn8) {
-		if(((JButton)btnNewButton2).getText().equals(strX)
-		&& ((JButton)btnNewButton5).getText().equals(strX)
-		&& ((JButton)btnNewButton8).getText().equals(strX)) {
+		if(btnNewButton2.getText().equals(strX)
+		&& btnNewButton5.getText().equals(strX)
+		&& btnNewButton8.getText().equals(strX)) {
 			setTitle("Win X");
 		}
 		
 		
 	}
 	if(btn3 && btn6 && btn9) {
-		if(((JButton)btnNewButton3).getText().equals(str0)
-		 && ((JButton)btnNewButton6).getText().equals(str0)
-		 && ((JButton)btnNewButton9).getText().equals(str0)) {
+		if(btnNewButton3.getText().equals(str0)
+		 && btnNewButton6.getText().equals(str0)
+		 && btnNewButton9.getText().equals(str0)) {
 			setTitle("Win 0");
 		}
 		
 		
 	}
 	if(btn3 && btn6 && btn9) {
-		if(((JButton)btnNewButton3).getText().equals(strX)
-		&& ((JButton)btnNewButton6).getText().equals(strX)
-		&& ((JButton)btnNewButton9).getText().equals(strX)) {
+		if(btnNewButton3.getText().equals(strX)
+		&& btnNewButton6.getText().equals(strX)
+		&& btnNewButton9.getText().equals(strX)) {
 			setTitle("Win X");
 		}
 		
 		
 	}
 	if(btn1 && btn5 && btn9) {
-		if(((JButton)btnNewButton1).getText().equals(str0)
-		&& ((JButton)btnNewButton5).getText().equals(str0)
-		&& ((JButton)btnNewButton9).getText().equals(str0)) {
+		if(btnNewButton1.getText().equals(str0)
+		&& btnNewButton5.getText().equals(str0)
+		&& btnNewButton9.getText().equals(str0)) {
 			setTitle("Win 0");
 		}
 		
 		
 	}
 	if(btn1 && btn5 && btn9) {
-		if(((JButton)btnNewButton1).getText().equals(strX)
-		&& ((JButton)btnNewButton5).getText().equals(strX)
-		&& ((JButton)btnNewButton9).getText().equals(strX)) {
+		if(btnNewButton1.getText().equals(strX)
+		&& btnNewButton5.getText().equals(strX)
+		&& btnNewButton9.getText().equals(strX)) {
 			setTitle("Win X");
 		}
 		
 		
 	}
 	if(btn3 && btn5 && btn7) {
-		if(((JButton)btnNewButton3).getText().equals(str0)
-		&& ((JButton)btnNewButton5).getText().equals(str0)
-		&& ((JButton)btnNewButton7).getText().equals(str0)) {
+		if(btnNewButton3.getText().equals(str0)
+		&& btnNewButton5.getText().equals(str0)
+		&& btnNewButton7.getText().equals(str0)) {
 			setTitle("Win 0");
 		}
 		
 		
 	}
 	if(btn3 && btn5 && btn7) {
-		if(((JButton)btnNewButton3).getText().equals(strX)
-		&& ((JButton)btnNewButton5).getText().equals(strX)
-		&& ((JButton)btnNewButton7).getText().equals(strX)) {
+		if(btnNewButton3.getText().equals(strX)
+		&& btnNewButton5.getText().equals(strX)
+		&& btnNewButton7.getText().equals(strX)) {
 			setTitle("Win X");
 		}
 		
