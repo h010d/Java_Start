@@ -1,20 +1,22 @@
 package Lesson_10;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import javax.swing.JButton;
-import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import javax.swing.Action;
 import java.awt.event.ActionListener;
 import java.awt.Font;
 
 public class TicTacToe extends JFrame {
+
+	/**
+	 * 
+	 */
+
 
 	private JPanel contentPane;
 	private JButton btnNewButton1;
@@ -260,7 +262,6 @@ public void setMyArr() {
 }
 public void PrintMyArr() {
 	setMyArr();
-	int count = 1;
 	
 	for(int i=0; i < Arr.length; i++) {
 		for(int j = 0; j < Arr[i].length; j++) {
@@ -271,7 +272,7 @@ public void PrintMyArr() {
 	System.out.println("\n");
 }
 public  void CheckWin() {
-	PrintMyArr();
+	//PrintMyArr();
 	if(btn1 && btn2 && btn3) {
 		if(btnNewButton1.getText().equals(str0)
 		 && btnNewButton2.getText().equals(str0)
@@ -414,12 +415,6 @@ public  void CheckWin() {
 	}
 	
 }
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
-	}
+
+	
 }
