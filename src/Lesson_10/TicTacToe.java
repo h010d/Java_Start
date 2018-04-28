@@ -66,15 +66,6 @@ public boolean Arr[][];
 	 */
 	public TicTacToe() {
 		step = true;
-		btn1 = false;
-		btn2 = false;
-		btn3 = false;
-		btn4 = false;
-		btn5 = false;
-		btn6 = false;
-		btn7 = false;
-		btn8 = false;
-		btn9 = false;
 		strX = "X";
 		str0 = "0";
 		Arr = new boolean[col][row];
