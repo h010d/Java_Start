@@ -1,4 +1,4 @@
-package calculators.calculator04.simplegui;
+package calculators.simplegui;
 
 import java.awt.*;
 import java.awt.event.*;

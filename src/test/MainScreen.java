@@ -53,23 +53,20 @@ public class MainScreen extends JFrame
         //Build label2
         label2 = new JLabel();
         label2.setIcon(new ImageIcon ("seed.jpg"));
-        label2.setBounds(707, 100, 400, 400);
+        label2.setBounds(50, 425, 400, 400);
         add(label2);
 
         //Build ComboBox
         box1 = new JComboBox();
         box1.setModel(new DefaultComboBoxModel(new String[] {"Gospel", "Raeggae", "Hip-Hop"}));
-        box1.setBounds(700, 0, 89, 50);
+        box1.setBounds(50, 20, 89, 50);
         add(box1);
 
-        setSize(1100, 770);
+        setSize(900, 800);
         setTitle("Main Screen");
-        setBackground(new Color(204, 102, 0));
+        setBackground(new Color(0, 0, 0));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setBackground(new Color(204, 102, 0));
-
-
-
+        getContentPane().setBackground(new Color(255, 0, 255));
 
 
         setVisible(true);
