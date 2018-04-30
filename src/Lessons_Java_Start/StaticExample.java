@@ -28,6 +28,7 @@ public class StaticExample {
     }
 
     public static void main(String[] args) {
-        new StaticExample();
+
+        System.out.println(StaticExample.staticExample.j);
     }
 }
