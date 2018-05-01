@@ -1,5 +1,7 @@
 package Lessons_Java_Start;
 
+import java.io.Serializable;
+
 public class OverloadingExmpl {
     public static void main(String[] args) {
     OverloadingExmpl overloadingExmpl = new OverloadingExmpl();
