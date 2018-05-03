@@ -15,14 +15,15 @@ class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "nameAutor='" + nameAutor + '\'' +
+                "nameAutor = '" + nameAutor + '\'' +
                 '}';
     }
 }
 
 public class CollectionsExample_01 {
     public static void main(String[] args) {
-        Collections collections;
+        Collection collection0;
+        Collections collections0;
         Arrays arrays;
         PrintBorders.print();
         int[] arr = new int[15];
@@ -73,8 +74,8 @@ public class CollectionsExample_01 {
         map.put("1", "Dan Brown");
         map.put("2", new Book("Karnegi"));
         map.put("3", "Jack London");
-        map.put("4", "Raf Govani");
-        map.put("5", "Val Pickul");
+        map.put("4", "Raffaello Govaniole");
+        map.put("5", "Valentin Pickul");
         System.out.println("Map");
         System.out.println(map.get("2"));
         Set set = map.entrySet();
@@ -87,19 +88,19 @@ public class CollectionsExample_01 {
         }
         PrintBorders.print();
         System.out.println("Collection");
-        Collection collection = new ArrayList();
-        collection.add("1");
-        collection.add("2");
-        collection.add("3");
-        collection.add("4");
-        collection.add("5");
-        collection.remove("2");
-        Iterator iterator = collection.iterator();
+        Collection collection7 = new ArrayList();
+        collection7.add("1");
+        collection7.add("2");
+        collection7.add("3");
+        collection7.add("4");
+        collection7.add("5");
+        collection7.remove("2");
+        Iterator iterator = collection7.iterator();
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + " ");
         }
         PrintBorders.print();
-        for (Object o : collection) {
+        for (Object o : collection7) {
             System.out.println(o);
         }
     }
