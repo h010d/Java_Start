@@ -34,8 +34,6 @@ public class DemoCode {
 //        File newFile = new File(path + "\file1.txt");
 
 
-
-
         File file = new File("src/testTmpDir/input.txt");
         FileReader in = new FileReader(file);
         String[] array = loadAndSort(in);
