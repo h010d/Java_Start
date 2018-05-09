@@ -43,7 +43,6 @@ class Son extends Child {
         System.out.println("Hi Im Son");
     }
 }
-
 public class GenericsExample <T extends Math & Comparable & Serializable> {
     public static void main(String[] args) {
         GenericsExample genericsExample = new GenericsExample();
@@ -59,7 +58,7 @@ public class GenericsExample <T extends Math & Comparable & Serializable> {
         System.out.println(car.var);
         PrintBorders.print();
         List<ParentExample> list = new ArrayList<>();
-       // List<ParentExample>[] list2 = new ArrayList<ParentExample>(); Can't create array from generic
+       //list<Parentexample>[]List2=NewArraylist<Parentexample>();Can'TCreateArrayFromGeneric
         list.add(new ParentExample());
         list.add(new Child());
         list.add(new Son());
@@ -84,6 +83,7 @@ public class GenericsExample <T extends Math & Comparable & Serializable> {
         System.out.println(type + " " + u + "" + k);
         /*return type;*/
     }
+    
     T method4(T type){
         type.notifyAll();
         type.compareTo(new Object());
